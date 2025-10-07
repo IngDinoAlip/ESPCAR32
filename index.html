@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard ESP32 + Firebase</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database.js"></script>
+</head>
+<body>
+  <h1>📡 Dashboard ESP32 - Ambiental</h1>
+
+  <div class="charts">
+    <canvas id="co2Chart"></canvas>
+    <canvas id="tempChart"></canvas>
+    <canvas id="humChart"></canvas>
+  </div>
+
+  <h2>🗂 Historial de registros</h2>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>CO₂ (ppm)</th>
+        <th>Temp (°C)</th>
+        <th>Humedad (%)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

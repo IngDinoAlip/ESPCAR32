@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+canvas {
+  max-width: 400px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 800px;
+  background-color: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #ddd;
+}
