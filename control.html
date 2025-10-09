@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Control del Carro Autónomo</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase compat SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+</head>
+
+<body>
+  <h1>🎮 Control Manual del Carro Autónomo</h1>
+
+  <a href="index.html" class="nav-button">← Volver al Dashboard</a>
+
+  <h2>Modo Manual</h2>
+  <div class="control-buttons">
+    <button onclick="enviarComando('adelante')">⬆️ Adelante</button>
+    <button onclick="enviarComando('izquierda')">⬅️ Izquierda</button>
+    <button onclick="enviarComando('derecha')">➡️ Derecha</button>
+    <button onclick="enviarComando('atras')">⬇️ Atrás</button>
+    <button onclick="enviarComando('detener')">⏹️ Detener</button>
+  </div>
+
+  <h2>📋 Ruta Programada</h2>
+  <p>Haz clic en los botones para construir una ruta:</p>
+  <div class="record-buttons">
+    <button onclick="agregarARuta('adelante')">Agregar ⬆️</button>
+    <button onclick="agregarARuta('izquierda')">Agregar ⬅️</button>
+    <button onclick="agregarARuta('derecha')">Agregar ➡️</button>
+    <button onclick="agregarARuta('atras')">Agregar ⬇️</button>
+    <button onclick="agregarARuta('detener')">Agregar ⏹️</button>
+  </div>
+
+  <div class="route-actions">
+    <button onclick="guardarRuta()">💾 Guardar Ruta</button>
+    <button onclick="ejecutarRuta()">🚗 Ejecutar Ruta</button>
+    <button onclick="borrarRuta()">🗑️ Borrar Ruta</button>
+  </div>
+
+  <p id="rutaLista">Ruta actual: (vacía)</p>
+
+  <script src="control.js"></script>
+</body>
+</html>
