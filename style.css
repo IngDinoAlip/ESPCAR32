@@ -71,3 +71,31 @@ h2 {
   font-size: 18px;
   color: #2c3e50;
 }
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+th {
+  background-color: #f9fafc;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+

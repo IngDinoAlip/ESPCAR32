@@ -61,3 +61,32 @@ function borrarRuta() {
   db.ref("ejecutarRuta").set(false);
   alert("🗑️ Ruta eliminada.");
 }
+
+function borrarUltimoPaso() {
+  if (ruta.length === 0) {
+    alert("❌ No hay pasos para borrar.");
+    return;
+  }
+
+  const ultimo = ruta.pop(); // Elimina el último paso
+
+  // Revertir la acción en el carro
+  let accionReversa = "";
+
+  switch (ultimo) {
+    case "adelante": accionReversa = "atras"; break;
+    case "atras": accionReversa = "adelante"; break;
+    case "izquierda": accionReversa = "derecha"; break;
+    case "derecha": accionReversa = "izquierda"; break;
+    case "detener": accionReversa = "detener"; break; // O nada
+    default: accionReversa = "detener"; break;
+  }
+
+  // Enviar comando inverso al carro
+  db.ref("modo").set("manual");
+  db.ref("comando").set(accionReversa);
+  db.ref("ruta").set(ruta);
+
+  mostrarRutaEnPantalla();
+  console.log("🧹 Paso eliminado:", ultimo, " | Acción revertida:", accionReversa);
+}
